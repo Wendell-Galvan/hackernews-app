@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState, useEffect} from 'react';
+import SearchBar from './components/SearchBar';
+// import MainNewsFeed from './components/MainNewsFeed';
+import ArticleList from './components/ArticleList';
+import SearchNews from './api';
+// import {Route, Routes} from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [articles, setArticles] = useState([]);
+
+	const handleSubmit = async (term) => {
+
+		const result = await SearchNews(term);
+
+		setArticles(result);
+	};
+
+	return (
+		<div>
+			<SearchBar onSubmit={handleSubmit} />
+			{/*<MainNewsFeed articles={articles} />*/}
+			<ArticleList articles={articles} />	
+		</div>
+	);
 }
 
-export default App;
+export default App; 
