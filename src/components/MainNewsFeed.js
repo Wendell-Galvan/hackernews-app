@@ -1,11 +1,12 @@
-// import SearchNews from '../api.js';
+import ArticleShow from './ArticleShow';
+import {nanoid} from 'nanoid';
 
-// function MainNewsFeed() {
-// 	const renderedNews = SearchNews("twitter");
+function MainNewsFeed({articles}) {
+	const renderedArticles = articles.map((article) => {
+		return <ArticleShow key={nanoid()} article={article} />;
+	});
 
-// 	return (
-// 		{renderedNews}
-// 	);
-// }
+	return <div>{renderedArticles}</div>;
+}
 
-// export default MainNewsFeed;
+export default MainNewsFeed;

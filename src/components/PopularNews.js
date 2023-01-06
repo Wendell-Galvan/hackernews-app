@@ -1,7 +1,7 @@
 import ArticleShow from './ArticleShow';
-import {nanoid} from 'nanoid';
+import {nanoid} from 'nanoid'; 
 
-function ArticleList({articles}) {
+function PopularNews({articles}) {
 	const renderedArticles = articles.map((article) => {
 		return <ArticleShow key={nanoid()} article={article} />;
 	});
@@ -9,4 +9,4 @@ function ArticleList({articles}) {
 	return <div>{renderedArticles}</div>;
 }
 
-export default ArticleList;
+export default PopularNews;

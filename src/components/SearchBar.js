@@ -2,12 +2,13 @@ import {useState} from 'react';
 
 function SearchBar({onSubmit}) {
 	//state for search term in input 
-	const [term, setTerm] = useState();
+	const [term, setTerm] = useState('');
 
 	const handleFormSubmit = (event) => {
 		event.preventDefault();
 
 		onSubmit(term);
+		setTerm('');
 	};
 
 	//update state with new input 

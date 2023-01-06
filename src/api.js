@@ -13,4 +13,18 @@ const searchNews = async (term) => {
 	return response.data.articles;
 }
 
-export default searchNews;
+const popularNews = async () => {
+	const response = await axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=a6346cb26498496b839aebe9f028ea18', {
+		headers: {
+			Authorization: 'a6346cb26498496b839aebe9f028ea18'
+		},
+		params: {
+			query: ''
+		}
+	});
+
+	console.log(response);
+	return response.data.articles;
+}
+
+export {searchNews, popularNews};
