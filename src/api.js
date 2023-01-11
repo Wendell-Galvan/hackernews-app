@@ -23,7 +23,6 @@ const popularNews = async () => {
 		}
 	});
 
-	console.log(response);
 	return response.data.articles;
 }
 

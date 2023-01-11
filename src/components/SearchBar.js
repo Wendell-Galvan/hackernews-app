@@ -17,7 +17,7 @@ function SearchBar({onSubmit}) {
 	};
 
 	return (
-		<div className="p-4 bg-green-300">
+		<div className="p-4 bg-green-300 w-full max-w-[400px]">
 			<form className="flex flex-col form-inline" onSubmit={handleFormSubmit}>
 				<label>Search News</label>
 				<input className="mr-sm-2 border border-solid border-black cursor-text" value={term} onChange={handleChange}/>
